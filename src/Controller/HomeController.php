@@ -15,6 +15,19 @@ use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends Controller
 {
+
+    /**
+     * @Route("/hello/{prenom}", name="hello")
+     */
+    public function hello($prenom = 'inconnu') {
+        return $this->render(
+            'hello.html.twig',
+            [
+                'prenom'=> $prenom
+            ]
+        );
+    }
+
     /**
      * @Route("/", name="homepage")
      */
