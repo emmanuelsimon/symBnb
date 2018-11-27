@@ -1,0 +1,27 @@
+ <!DOCTYPE hmtl>
+ <html lang="en">
+ <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="id=edge">
+     <title>Mon application</title>
+ </head>
+ <body>
+    <h1>{{ title }}</h1>
+    <p>Comment allez vous</p>
+    {% if age>=18  %}
+        <p>Vous êtes un adulte</p>
+ {% else %}
+        <p>Vous êtes un enfant</p>
+ {% endif %}
+
+ {% for prenom, age in tableau %}
+    <p>(itération numéro {{ loop.index0 }}) : {{  prenom }}</p>
+     {% if age>=18  %}
+         <p>est un adulte</p>
+     {% else %}
+         <p>est un enfant</p>
+     {% endif %}
+ {% endfor %}
+ </body>
+ </html>
