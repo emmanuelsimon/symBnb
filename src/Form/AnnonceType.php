@@ -14,26 +14,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 
 
-class AnnonceType extends AbstractType
+class AnnonceType extends ApplicationType
 {
-    /**
-     * Permet d'avoir le label et le placeholder pour les formulaires
-     *
-     * @param $label le label du champ du formulaire
-     * @param $placeholder le placeholder du champ du formulaire
-     * @param $options les options à ajouter
-     *
-     * @return array
-     */
-    private function getConfiguration($label, $placeholder, $options = []){
-        return array_merge([
-            'label'=>$label,
-            'attr'=>[
-                'placeholder'=>$placeholder
-                ]
-        ], $options);
-    }
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder

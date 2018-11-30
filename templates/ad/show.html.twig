@@ -50,21 +50,20 @@
             <div class="col">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="http://placehold.it/64x64" alt="avatar">
+                        <img src="{{ ad.author.picture }}" alt="avatar">
                     </div>
                     <div class="col-md-8">
-                        <h3>Joseph</h3>
+                        <h3">{{ ad.author.firstName }} {{ ad.author.lastName }}</h3>
                         <span class="badge badge-primary">
                         3 annonces
                     </span>
                     </div>
                 </div>
-                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cum doloribus
-                    ducimus ipsum minus non quas ratione reprehenderit totam voluptatum.</p>
-                <p class="">Aut debitis deserunt eos harum ipsa itaque labore laudantium natus, odio placeat, qui
-                    quidem quo quod repellendus sed sequi tenetur.</p>
-                <p class="">Accusamus amet architecto commodi dolorum et fuga illum, libero maiores nemo nesciunt odit
-                    optio quae quos saepe sed sunt unde.</p>
+                <div class="row">
+                    <div class="col">
+                        {{ ad.author.description | raw }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

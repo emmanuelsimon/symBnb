@@ -1,12 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edition d'une annonce{% endblock %}
-
-{% form_theme form 'ad/_collection.html.twig' %}
+{% block title %}Modification du profile{% endblock %}
 
 {% block body %}
+
     <div class="container">
-        <h1>Modificer l'annonce {{ ad.title }}</h1>
+        <h1>Edition de votre profil</h1>
 
         {{ form_start(form) }}
 
@@ -15,14 +14,9 @@
         <button type="submit" class="btn btn-primary">Valider les modfications</button>
 
         {{ form_end(form) }}
+
+
     </div>
 
-
-{% endblock %}
-
-
-{% block javascripts %}
-
-    <script scr="/js/ad.js"></script>
 
 {% endblock %}
