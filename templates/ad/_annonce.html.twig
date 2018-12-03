@@ -13,6 +13,16 @@
                     {{ ad.introduction }}
                 </p>
                 <a href="{{ url }}" class="btn btn-secondary btn-lg">En savoir plus</a>
+                {% if ad.author is same as(app.user) %}
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <a href="{{ path('ads_edit', {'slug':ad.slug}) }}" class="btn btn-primary">Editer</a>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <a href="{{ path('ads_delete', {'slug':ad.slug}) }}" class="btn btn-danger">Supprimer</a>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

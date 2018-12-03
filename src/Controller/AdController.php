@@ -5,11 +5,15 @@ namespace App\Controller;
 use App\Entity\Ad;
 use App\Repository\AdRepository;
 use Doctrine\Common\Persistence\ObjectManager;
+use MongoDB\Driver\Manager;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\AnnonceType;
+
 
 class AdController extends AbstractController
 {
@@ -28,6 +32,7 @@ class AdController extends AbstractController
      * Permet d'ajouter une annonce
      *
      * @Route("/ads/new", name="ads_create")
+     * @IsGranted("ROLE_USER")
      *
      * @return Response
      *
@@ -66,6 +71,7 @@ class AdController extends AbstractController
      * Permet d'afficher le formulaire d'édition
      *
      * @Route("/ads/{slug}/edit", name="ads_edit")
+     * @Security("is_granted('ROLE_USER') and user === ad.getAuthor()", message="Cette annonce n'est pas à vous")
      *
      * @return Response
      */
@@ -111,5 +117,25 @@ class AdController extends AbstractController
             ]);
     }
 
+    /**
+     * Supprime une annonce
+     *
+     * @Route("/ads/{slug}/delete", name="ads_delete")
+     * @Security("is_granted('ROLE_USER') and user === ad.getAuthor()", message="Cette annonce n'est pas à vous")
+     *
+     * @return Response
+     */
+    public function delete(ObjectManager $manager, Ad $ad)
+    {
+        $manager->remove($ad);
+        $manager->flush();
+
+        $this->addFlash(
+            'success',
+            'Votre annonce '.$ad->getTitle().' a bien été supprimée.'
+        );
+
+        return $this->redirectToRoute("ads_index");
+    }
 
 }

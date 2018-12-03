@@ -46,6 +46,16 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
+                {% if ad.author is same as(app.user) %}
+                    <div class="row">
+                        <div class="col-md-5 text-center">
+                            <a href="{{ path('ads_edit', {'slug':ad.slug}) }}" class="btn btn-primary">Editer</a>
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <a href="{{ path('ads_delete', {'slug':ad.slug}) }}" class="btn btn-danger">Supprimer</a>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
             <div class="col">
                 {% set urlUser=path('user_show', {'slug':ad.author.slug}) %}
