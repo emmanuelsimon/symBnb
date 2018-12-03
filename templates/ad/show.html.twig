@@ -29,7 +29,7 @@
                     <div class="carousel-inner">
                         {% for image in ad.images %}
                         <div class="carousel-item{% if loop.first %} active{% endif %}">
-                            <img class="d-block w-100" src="{{ image.url }}" alt="First slide">
+                            <img class="d-block w-100" src="{{ image.url }} {{ ad.author.fullName }}" alt="First slide">
                         </div>
                         <div class="carousel-caption d-none d-md-block">
                             <h5>{{ ad.title }}</h5>
@@ -48,17 +48,20 @@
                 </div>
             </div>
             <div class="col">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="{{ ad.author.picture }}" alt="avatar">
+                {% set urlUser=path('user_show', {'slug':ad.author.slug}) %}
+                <a href="{{ urlUser }}">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="{{ ad.author.picture }}" class="avatar avatar-medium" alt="avatar">
+                        </div>
+                        <div class="col-md-8">
+                            <h3>{{ ad.author.fullName }}</h3>
+                            <span class="badge badge-primary">
+                            {{ ad.author.ads | length }} annonces
+                        </span>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <h3">{{ ad.author.firstName }} {{ ad.author.lastName }}</h3>
-                        <span class="badge badge-primary">
-                        3 annonces
-                    </span>
-                    </div>
-                </div>
+                </a>
                 <div class="row">
                     <div class="col">
                         {{ ad.author.description | raw }}

@@ -69,7 +69,7 @@ class Ad
     /**
      * @ORM\Column(type="integer")
      *
-     * @Assert\Url()
+     * @Assert\Type(type="integer", message="Cela doit être un entier")
      */
     private $rooms;
 

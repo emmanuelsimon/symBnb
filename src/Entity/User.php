@@ -20,7 +20,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface
 {
-
+    public function getFullName() {
+        return $this->getFirstName().' '.$this->getLastName();
+    }
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
