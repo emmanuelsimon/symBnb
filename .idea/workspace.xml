@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="a6457fde-9338-420c-9b53-77c2d4527c6e" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error403.html.twig" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
+=======
+    <list default="true" id="a6457fde-9338-420c-9b53-77c2d4527c6e" name="Default Changelist" comment="" />
+    <list id="49590da2-942b-4376-b9d2-08ef858c1f4c" name="Fin lecon 131 (grosse partie réservation rest 1 lecon sur ce chapitre)" comment="Fin lecon 131 (grosse partie réservation rest 1 lecon sur ce chapitre)">
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,6 +38,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -211,6 +217,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -253,6 +260,11 @@
       <workItem from="1543566970410" duration="18380000" />
       <workItem from="1543825318519" duration="21347000" />
       <workItem from="1543906961412" duration="1267000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1543924082631" duration="6364000" />
+      <workItem from="1543992995906" duration="10198000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1543329692232</created>
@@ -331,16 +343,42 @@
       <option name="project" value="LOCAL" />
       <updated>1543851282536</updated>
     </task>
+<<<<<<< Updated upstream
     <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="79615000" />
+=======
+    <task id="LOCAL-00012" summary="Fin lecon 131 (grosse partie réservation rest 1 lecon sur ce chapitre)">
+      <created>1544015478959</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1544015478959</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Fin lecon 131 (grosse partie réservation rest 1 lecon sur ce chapitre)">
+      <created>1544015933077</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1544015933077</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="102155000" />
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
+<<<<<<< Updated upstream
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13059701" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13272922" />
+>>>>>>> Stashed changes
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -352,9 +390,15 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.34561214" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+=======
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49946696" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49946696" weight="0.34561214" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.34561214" />
+>>>>>>> Stashed changes
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -391,9 +435,9 @@
     <option name="COLUMN_ORDER">
       <list>
         <option value="0" />
+        <option value="1" />
         <option value="2" />
         <option value="3" />
-        <option value="1" />
       </list>
     </option>
   </component>
