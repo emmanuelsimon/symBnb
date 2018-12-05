@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Ad;
 use App\Repository\AdRepository;
 use Doctrine\Common\Persistence\ObjectManager;
-use MongoDB\Driver\Manager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
