@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Booking;
+use App\Entity\Comment;
 use App\Entity\Image;
 use App\Entity\Role;
 use App\Entity\User;
@@ -25,11 +26,12 @@ class AppFixtures extends Fixture
     {
         $faker=Factory::create('FR-fr');
 
+        // création du compte admin
         $adminRole=new Role();
         $adminRole->setTitle('ROLE_ADMIN');
-
         $manager->persist($adminRole);
 
+        // création des users
         $adminUser=new User();
         $adminUser->setFirstName('Emmanuel')
             ->setLastName('Simon')
@@ -93,6 +95,7 @@ class AppFixtures extends Fixture
                     ->setAd($ad);
                 $manager->persist($image);
             }
+            // création des reservations
             for($j=1; $j<=mt_rand(0, 10); $j++) {
                 $booking=new Booking();
                 $createAt=$faker->dateTime('-6 month');
@@ -104,6 +107,7 @@ class AppFixtures extends Fixture
 
                 $comment=$faker->paragraph();
 
+                // gestion des reservations
                 $booking->setBooker($booker)
                     ->setCreateAt($createAt)
                     ->setStartDate($startDate)
@@ -114,6 +118,19 @@ class AppFixtures extends Fixture
                 ;
 
                 $manager->persist($booking);
+
+                // gestion des commentaires
+                if(mt_rand(0,1)===1) {
+                    $comment=new Comment();
+                    $comment->setRating(mt_rand(0, 5))
+                        ->setAd($ad)
+                        ->setContent($faker->paragraph())
+                        ->setAuthor($booker);
+
+                    $manager->persist($comment);
+                }
+
+
             }
             $manager->persist($ad);
         }

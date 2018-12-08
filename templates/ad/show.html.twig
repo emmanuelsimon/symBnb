@@ -48,6 +48,36 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
+                <hr>
+                {% if ad.comments | length >0 %}
+                    <h2 class="mb-3">Commentaires de nos voyageurs</h2>
+                    <div class="alert alert-info">
+                        <h4 class="alert-heading">
+                            <div class="row align-items-center">
+                                <div class="col">Note global donnée par nos voyageurs
+                                </div>
+                                <div class="col">
+                                    <br>
+                                    <small>(calculée sur {{ ad.comments | length }} avis)</small>
+                                    {% include 'partials/rating.html.twig' with {'rating': ad.avgRating} %}
+                                </div>
+                            </div>
+                        </h4>
+                    </div>
+                    {% for comment in ad.comments %}
+                        <div class="bg-light rounded mb-3 py-3 my-3">
+                            <strong>{{ comment.author.fullName }}</strong> a dit :
+                            <blockquote>
+                                {{ comment.content }}
+                            </blockquote>
+                            <strong>Note donnée par {{ comment.author.fullName }} : </strong>
+                            {% include 'partials/rating.html.twig' with {'rating':comment.rating} %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <h2 class="mb-3">Il n'y a pas encore de commentaire.</h2>
+                {% endif %}
+
                 {% if ad.author is same as(app.user) %}
                     <div class="row">
                         <div class="col-md-5 text-center">
