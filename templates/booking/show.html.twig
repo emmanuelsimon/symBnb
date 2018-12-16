@@ -62,10 +62,18 @@
                         Votre avis compte !
                     </h2>
                     {% if date() > date(booking.endDate) %}
-                        {{ form_start(form) }}
-                        {{ form_widget(form) }}
-                        <button class="btn brn-primary" type="submit">Valider votre commentaire</button>
-                        {{ form_end(form) }}
+                        {% set comment = booking.ad.commentFromAuthor(app.user) %}
+                        {% if comment is not null %}
+                            <blockquote>
+                                {{ comment.content }}
+                            </blockquote>
+                            <strong>Note : </strong>{% include 'partials/rating.html.twig' with {'rating':comment.rating} %}
+                        {% else %}
+                            {{ form_start(form) }}
+                            {{ form_widget(form) }}
+                            <button class="btn brn-primary" type="submit">Valider votre commentaire</button>
+                            {{ form_end(form) }}
+                        {% endif %}
                     {% else %}
                         <p>Vous ne pourrez noter cette annonce avant la fin de votre séjour.</p>
                     {% endif %}

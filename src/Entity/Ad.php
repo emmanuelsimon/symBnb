@@ -310,6 +310,29 @@ class Ad
         return $this->comments;
     }
 
+    /**
+     * Permet de récupérer le commentaire d'un auteur par rapport a une annonce
+     *
+     * @param User $author
+     * @return Comment|null
+     */
+    public function getCommentFromAuthor(User $author)
+    {
+        $retour = null;
+        foreach ($this->comments as $comment) {
+            if ($comment->getAuthor()===$author) {
+                $retour = $comment;
+                break;
+            }
+        }
+        return $retour;
+    }
+
+    /**
+     * Permet de calculer la moyenne global de l'annonce
+     *
+     * @return float|int
+     */
     public function getAvgRating()
     {
         $moyenne=0;

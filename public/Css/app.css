@@ -31,6 +31,11 @@ div.carousel-caption{
     max-height: 24px;
 }
 
+.avatar-micro {
+    max-height: 18px;
+    max-width: 18px;
+}
+
 .datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
     color:red ! important;
 }

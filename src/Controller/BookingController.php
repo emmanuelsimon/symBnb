@@ -71,12 +71,12 @@ class BookingController extends AbstractController
             $comment->setAd($booking->getAd())
                 ->setAuthor($this->getUser());
 
-            $manager->persist();
+            $manager->persist($comment);
             $manager->flush();
 
             $this->addFlash(
                 'success',
-                'Votre annonce commentaire a été enregistré.'
+                'Votre commentaire a été enregistré.'
             );
 
         }
